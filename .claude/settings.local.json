@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx --yes create-next-app@latest . --typescript --tailwind --app --src-dir --no-turbo)",
+      "Read(//c/Users/AX/Desktop/**)",
+      "Bash(mv \"Aevora WEB\" \"aevora-web\")",
+      "Bash(echo \"exit:$?\")"
+    ]
+  }
+}
