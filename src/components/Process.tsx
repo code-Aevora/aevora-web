@@ -133,7 +133,7 @@ export function Process() {
               key={step.number}
               className="h-full"
               animationMode="auto-rotate"
-              animationSpeed={14}
+              animationSpeed={30}
               borderWidth={2}
               borderRadius={28}
             >

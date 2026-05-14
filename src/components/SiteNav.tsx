@@ -37,8 +37,8 @@ export function SiteNav({ openModal }: SiteNavProps) {
         <GlassButton
           type="button"
           onClick={openModal}
-          size="sm"
-          className="hidden md:inline-block text-base px-6 py-3"
+          size="default"
+          className="hidden md:inline-flex h-12 text-base px-6"
         >
           Reservar diagnóstico
         </GlassButton>
