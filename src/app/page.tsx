@@ -8,6 +8,7 @@ import { Pricing } from "@/components/Pricing";
 import { About } from "@/components/About";
 import { CTA } from "@/components/CTA";
 import { ContactModal } from "@/components/Modal/ContactModal";
+import { AevoraBackground } from "@/components/AevoraBackground";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -19,10 +20,16 @@ export default function Home() {
       <SiteNav openModal={openModal} />
       <main>
         <Hero openModal={openModal} />
-        <Process />
-        <Pricing openModal={openModal} />
-        <About />
-        <CTA openModal={openModal} />
+
+        <div style={{ position: 'relative' }}>
+          <AevoraBackground />
+          <div style={{ position: 'relative', zIndex: 1 }}>
+            <Process />
+            <Pricing openModal={openModal} />
+            <About />
+            <CTA openModal={openModal} />
+          </div>
+        </div>
       </main>
       <footer className="border-t border-border/60 py-14">
         <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-8 px-6 md:flex-row md:items-center">
