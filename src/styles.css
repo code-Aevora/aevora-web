@@ -1,37 +1,47 @@
 @font-face {
   font-family: "Astera";
-  src: url("/fonts/Astera-v2.ttf") format("truetype");
+  src: url("./fonts/Astera-v2.ttf") format("truetype");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Astonpoliz";
-  src: url("/fonts/Astonpoliz.ttf") format("truetype");
+  src: url("./fonts/Astonpoliz.ttf") format("truetype");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Formation Sans";
-  src: url("/fonts/Formation Sans Regular.ttf") format("truetype");
+  src: url("./fonts/Formation Sans Regular.ttf") format("truetype");
   font-display: swap;
 }
 
-@import "tailwindcss";
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Aevora — premium agency design system.
+ * Editorial black + warm gold. Instrument Serif for display, Inter for UI.
+ */
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
 
-  --font-sans: "Formation Sans", ui-sans-serif, sans-serif;
-  --font-display: "Astonpoliz", serif;
-  --font-brand: "Astera", sans-serif;
+  --font-sans: "Formation Sans", "Inter", ui-sans-serif, sans-serif;
+  --font-display: "Astonpoliz", "Instrument Serif", serif;
+  --font-brand: "Astera", sans-serif; /* nueva, para el logo */
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
@@ -40,63 +50,119 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
   --color-gold: var(--gold);
   --color-gold-soft: var(--gold-soft);
   --color-gold-deep: var(--gold-deep);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
 }
 
 :root {
   --radius: 0.5rem;
+
+  /* Editorial near-black with warm undertone */
   --background: oklch(0.14 0.012 60);
   --foreground: oklch(0.96 0.012 80);
+
+  --ink: oklch(0.1 0.01 60);
+  --ink-2: oklch(0.18 0.014 65);
+
   --card: oklch(0.17 0.013 65);
   --card-foreground: oklch(0.96 0.012 80);
+  --popover: oklch(0.17 0.013 65);
+  --popover-foreground: oklch(0.96 0.012 80);
+
+  /* Warm gold palette */
   --gold: oklch(0.78 0.13 78);
   --gold-soft: oklch(0.86 0.09 85);
   --gold-deep: oklch(0.58 0.12 65);
+
   --primary: oklch(0.78 0.13 78);
   --primary-foreground: oklch(0.14 0.012 60);
+
   --secondary: oklch(0.22 0.014 65);
   --secondary-foreground: oklch(0.96 0.012 80);
+
   --muted: oklch(0.2 0.012 65);
   --muted-foreground: oklch(0.68 0.02 75);
+
   --accent: oklch(0.78 0.13 78);
   --accent-foreground: oklch(0.14 0.012 60);
+
+  --destructive: oklch(0.62 0.22 25);
+  --destructive-foreground: oklch(0.98 0 0);
+
   --border: oklch(0.96 0.012 80 / 0.1);
   --input: oklch(0.96 0.012 80 / 0.14);
   --ring: oklch(0.78 0.13 78);
+
   --gradient-gold: linear-gradient(135deg, oklch(0.86 0.09 85), oklch(0.72 0.14 70));
+  --gradient-radial-gold: radial-gradient(
+    circle at 50% 0%,
+    oklch(0.78 0.13 78 / 0.18),
+    transparent 60%
+  );
   --shadow-gold: 0 20px 60px -20px oklch(0.78 0.13 78 / 0.45);
+  --shadow-elegant: 0 30px 80px -30px oklch(0 0 0 / 0.6);
 }
 
 @layer base {
   * {
     border-color: var(--color-border);
-    box-sizing: border-box;
   }
 
   html {
     font-family: var(--font-sans);
     background-color: var(--color-background);
-    scroll-behavior: smooth;
   }
 
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: "Astonpoliz", serif;
   }
 
-  body, p, span, a, button, input, select, textarea, label, li {
+  body,
+  p,
+  span,
+  a,
+  button,
+  input,
+  select,
+  textarea,
+  label,
+  li {
     font-family: "Formation Sans", sans-serif;
   }
+
+  ::selection {
+    background-color: oklch(0.78 0.13 78 / 0.35);
+    color: var(--color-foreground);
+  }
+}
+
+@utility font-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+@utility text-balance {
+  text-wrap: balance;
 }
 
 @utility gold-text {
@@ -106,68 +172,37 @@
   color: transparent;
 }
 
-@utility font-display {
-  font-family: var(--font-display);
-  font-weight: 400;
-  letter-spacing: -0.02em;
+@utility hairline {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    oklch(0.96 0.012 80 / 0.18) 20%,
+    oklch(0.96 0.012 80 / 0.18) 80%,
+    transparent
+  );
+  height: 1px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 @keyframes fade-up {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @utility animate-fade-up {
   animation: fade-up 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
-}
-
-/* ---------- GlassButton ---------- */
-.glass-button-wrap {
-  position: relative;
-  display: inline-block;
-  isolation: isolate;
-}
-
-.glass-button {
-  position: relative;
-  z-index: 2;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid oklch(0.78 0.13 78 / 0.35);
-  background-color: oklch(0.78 0.13 78 / 8%);
-  backdrop-filter: blur(14px) saturate(140%);
-  -webkit-backdrop-filter: blur(14px) saturate(140%);
-  box-shadow:
-    inset 0 1px 0 oklch(1 0 0 / 0.18),
-    inset 0 -1px 0 oklch(0 0 0 / 0.25);
-  color: oklch(0.78 0.13 78);
-  transition:
-    background-color 0.25s ease,
-    border-color 0.25s ease,
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.glass-button:hover {
-  background-color: oklch(0.78 0.13 78 / 16%);
-  border-color: oklch(0.78 0.13 78 / 0.6);
-  transform: translateY(-1px);
-}
-
-.glass-button:active {
-  transform: translateY(0);
-}
-
-.glass-button-text {
-  color: oklch(0.78 0.13 78);
-  font-family: "Formation Sans", sans-serif;
-}
-
-.glass-button-shadow {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  box-shadow: 0 20px 60px -20px oklch(0.78 0.13 78 / 0.45);
 }

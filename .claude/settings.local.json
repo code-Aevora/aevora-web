@@ -4,7 +4,12 @@
       "Bash(npx --yes create-next-app@latest . --typescript --tailwind --app --src-dir --no-turbo)",
       "Read(//c/Users/AX/Desktop/**)",
       "Bash(mv \"Aevora WEB\" \"aevora-web\")",
-      "Bash(echo \"exit:$?\")"
+      "Bash(echo \"exit:$?\")",
+      "Bash(npm run *)",
+      "Bash(echo \"PID:$!\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(npm install *)",
+      "Bash(curl -s -o /dev/null -w \"HTTP:%{http_code}\\\\n\" http://localhost:3000/)"
     ]
   }
 }

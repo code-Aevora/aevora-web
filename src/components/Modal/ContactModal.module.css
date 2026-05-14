@@ -1,0 +1,72 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.75);
+  animation: overlayFade 250ms ease-out both;
+}
+
+@keyframes overlayFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.panel {
+  position: relative;
+  width: 90%;
+  max-width: 520px;
+  padding: 48px 40px;
+  border-radius: 16px;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  background: #1a1208;
+  box-shadow: var(--shadow-elegant, 0 30px 80px -30px rgb(0 0 0 / 0.6));
+  animation: panelIn 250ms ease-out both;
+}
+
+@keyframes panelIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: oklch(0.68 0.02 75);
+  cursor: pointer;
+  transition: color 150ms ease;
+}
+
+.close:hover {
+  color: oklch(0.78 0.13 78);
+}
+
+.success {
+  text-align: center;
+  font-family: "Astonpoliz", serif;
+  font-size: 1.25rem;
+  color: oklch(0.78 0.13 78);
+  padding: 2rem 0;
+}

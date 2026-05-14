@@ -1,65 +1,48 @@
-import Image from "next/image";
+"use client";
+
+import { useState } from "react";
+import { SiteNav } from "@/components/SiteNav";
+import { Hero } from "@/components/Hero";
+import { Process } from "@/components/Process";
+import { Pricing } from "@/components/Pricing";
+import { About } from "@/components/About";
+import { CTA } from "@/components/CTA";
+import { ContactModal } from "@/components/Modal/ContactModal";
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <>
+      <SiteNav openModal={openModal} />
+      <main>
+        <Hero openModal={openModal} />
+        <Process />
+        <Pricing openModal={openModal} />
+        <About />
+        <CTA openModal={openModal} />
       </main>
-    </div>
+      <footer className="border-t border-border/60 py-14">
+        <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-8 px-6 md:flex-row md:items-center">
+          <div className="flex items-center gap-3">
+            <img src="/aurumlogo.png" alt="Aevora" style={{ height: '32px', width: 'auto' }} />
+            <div>
+              <div style={{ fontFamily: 'Astera, sans-serif' }} className="text-sm font-medium tracking-[0.22em] text-foreground/90">AEVORA</div>
+              <div className="text-xs text-muted-foreground">Agentic AI Company · España</div>
+            </div>
+          </div>
+          <nav className="flex flex-wrap items-center gap-x-8 gap-y-2 text-xs text-muted-foreground">
+            <a href="#proceso" className="hover:text-foreground transition-colors">Método</a>
+            <a href="#inversion" className="hover:text-foreground transition-colors">Niveles</a>
+            <a href="#nosotros" className="hover:text-foreground transition-colors">Nosotros</a>
+            <a href="mailto:support@aevora.es" className="hover:text-foreground transition-colors">support@aevora.es</a>
+            <span>© 2026 Aevora</span>
+          </nav>
+        </div>
+      </footer>
+      <ContactModal isOpen={isModalOpen} onClose={closeModal} />
+    </>
   );
 }
