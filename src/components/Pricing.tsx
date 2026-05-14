@@ -61,24 +61,24 @@ function PlanCard({ plan, openModal, highlighted }: PlanCardProps) {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      <div
-        className="pointer-events-none absolute inset-0 rounded-[inherit] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-        style={{
-          background: `radial-gradient(300px circle at var(--glow-x, 50%) var(--glow-y, 50%), ${
-            highlighted
-              ? 'oklch(0.78 0.13 78 / 0.12)'
-              : 'oklch(0.96 0.012 80 / 0.05)'
-          }, transparent 70%)`,
-        }}
-      />
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 rounded-[22px] overflow-hidden pointer-events-none">
+        <div
+          className="absolute inset-0 rounded-[inherit] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+          style={{
+            background: `radial-gradient(300px circle at var(--glow-x, 50%) var(--glow-y, 50%), ${
+              highlighted
+                ? 'oklch(0.78 0.13 78 / 0.12)'
+                : 'oklch(0.96 0.012 80 / 0.05)'
+            }, transparent 70%)`,
+          }}
+        />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(249,222,144,0.18),transparent_42%)]" />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[length:18px_18px] opacity-40" />
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
       </div>
       {plan.highlighted && (
         <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-20">
-          <span className="rounded-full border border-gold/60 bg-card px-4 py-1 text-[10px] uppercase tracking-[0.2em] text-gold">
+          <span className="rounded-full border border-gold bg-gold px-4 py-1 text-[10px] uppercase tracking-[0.2em] text-background font-medium">
             Recomendado
           </span>
         </div>
