@@ -130,22 +130,9 @@
   }
 }
 
-@keyframes hero-rotate-reverse {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(-360deg);
-  }
-}
-
 @layer utilities {
   .rotate-slow {
     animation: hero-rotate 30s linear infinite;
-  }
-
-  .rotate-slow-reverse {
-    animation: hero-rotate-reverse 30s linear infinite;
   }
 }
 

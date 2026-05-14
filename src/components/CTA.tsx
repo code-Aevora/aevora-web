@@ -10,7 +10,7 @@ export function CTA({ openModal }: { openModal: () => void }) {
           <div aria-hidden className="absolute inset-0 rotate-slow">
             <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-gold/20 blur-3xl" />
           </div>
-          <div aria-hidden className="absolute inset-0 rotate-slow-reverse">
+          <div aria-hidden className="absolute inset-0 rotate-slow">
             <div className="absolute -bottom-32 -left-20 h-96 w-96 rounded-full bg-gold/10 blur-3xl" />
           </div>
           <div className="relative grid gap-12 lg:grid-cols-12">
