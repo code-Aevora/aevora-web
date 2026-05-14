@@ -19,13 +19,6 @@ export function Hero({ openModal }: HeroProps) {
 
       <div className="mx-auto grid min-h-[100svh] max-w-6xl grid-cols-1 items-center gap-12 px-6 pt-28 sm:pt-32 lg:pt-40 pb-24 lg:grid-cols-12">
         <div className="lg:col-span-7 lg:col-start-6 text-center sm:text-left">
-          <div className="inline-flex items-center gap-2 rounded-full border border-gold/20 bg-gold/5 px-4 py-1.5 mb-6">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-gold"></span>
-            </span>
-            <span className="text-[11px] uppercase tracking-[0.2em] text-gold/80">Aceptando 4 clientes · Q2 2026</span>
-          </div>
           <h1 className="font-display mt-7 text-balance text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] tracking-tight">
             <span className="text-foreground/90">Crecimiento</span>{" "}
             <span className="text-foreground">predecible</span>
