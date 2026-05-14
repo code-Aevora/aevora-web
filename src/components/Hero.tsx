@@ -35,7 +35,7 @@ export function Hero({ openModal }: HeroProps) {
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <GlassButton type="button" onClick={openModal} size="lg">
-              Reservar diagnóstico gratuito <span aria-hidden>→</span>
+              Reservar diagnóstico gratuito
             </GlassButton>
             <a
               href="#proceso"

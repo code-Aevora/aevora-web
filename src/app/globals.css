@@ -134,6 +134,40 @@
   .rotate-slow {
     animation: hero-rotate 30s linear infinite;
   }
+
+  .gradient-border-component {
+    position: relative;
+    overflow: hidden;
+    background-size: 200% 200%;
+    background-position: 0% 50%;
+  }
+
+  .gradient-border-component::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: var(--border-width);
+    background: inherit;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .gradient-border-auto {
+    animation: gradient-rotate var(--animation-duration) linear infinite;
+  }
+
+  @keyframes gradient-rotate {
+    from {
+      background-position: 0% 50%;
+    }
+    to {
+      background-position: 360% 50%;
+    }
+  }
 }
 
 /* ---------- GlassButton ---------- */

@@ -49,7 +49,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
   };
 
   const inputClass = (field: string) =>
-    `w-full rounded-lg px-4 py-3 text-sm bg-white/5 border transition-all outline-none text-foreground placeholder:text-muted-foreground/50 ${
+    `w-full rounded-lg px-4 py-3 text-sm bg-card/40 border transition-all outline-none text-foreground placeholder:text-muted-foreground/50 appearance-none ${
       errors[field]
         ? "border-red-500 focus:border-red-400"
         : "border-border/40 focus:border-gold/60"

@@ -21,10 +21,6 @@ export function CTA({ openModal }: { openModal: () => void }) {
                 <br />
                 comercial gratuito.
               </h2>
-              <p className="mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-                30 minutos con un estratega senior. Salimos con un plan accionable — trabajemos
-                juntos o no. Solo aceptamos 6 diagnósticos al mes.
-              </p>
             </div>
             <div className="flex items-end lg:col-span-5 lg:justify-end">
               <GlassButton type="button" onClick={openModal} size="lg">
