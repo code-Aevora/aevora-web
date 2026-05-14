@@ -19,19 +19,12 @@ export function Hero({ openModal }: HeroProps) {
 
       <div className="mx-auto grid min-h-[100svh] max-w-6xl grid-cols-1 items-center gap-12 px-6 pt-40 pb-24 lg:grid-cols-12">
         <div className="lg:col-span-7 lg:col-start-6">
-          <div className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/40 px-3 py-1.5 backdrop-blur">
-            <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
-            <span className="text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
-              Aceptando 4 clientes · Q2 2026
-            </span>
-          </div>
-
           <h1 className="font-display mt-7 text-balance text-6xl leading-[0.95] tracking-tight md:text-7xl lg:text-8xl">
-            <span className="font-display italic text-foreground/90">Crecimiento</span>{" "}
+            <span className="font-display text-foreground/90">Crecimiento</span>{" "}
             <span className="font-display text-foreground">predecible</span>
             <br />
             <span className="font-display">para empresas que ya</span>{" "}
-            <span className="gold-text font-display italic">facturan</span>.
+            <span className="gold-text font-display">facturan</span>.
           </h1>
 
           <p className="mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground md:text-xl">
