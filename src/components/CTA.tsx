@@ -6,7 +6,7 @@ export function CTA({ openModal }: { openModal: () => void }) {
   return (
     <section id="contacto" className="relative py-32">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="relative overflow-hidden rounded-[2rem] border border-gold/30 bg-gradient-to-br from-ink-2 via-ink to-background p-12 md:p-20">
+        <div className="relative rounded-[2rem] border border-gold/30 bg-gradient-to-br from-ink-2 via-ink to-background p-12 md:p-20">
           <div aria-hidden className="absolute inset-0 rotate-slow">
             <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-gold/20 blur-3xl" />
           </div>
