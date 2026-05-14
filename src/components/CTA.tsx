@@ -7,19 +7,17 @@ export function CTA({ openModal }: { openModal: () => void }) {
     <section id="contacto" className="relative py-32">
       <div className="mx-auto max-w-6xl px-6">
         <div className="relative overflow-hidden rounded-[2rem] border border-gold/30 bg-gradient-to-br from-ink-2 via-ink to-background p-12 md:p-20">
-          <div
-            aria-hidden
-            className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-gold/20 blur-3xl"
-          />
-          <div
-            aria-hidden
-            className="absolute -bottom-32 -left-20 h-96 w-96 rounded-full bg-gold/10 blur-3xl"
-          />
+          <div aria-hidden className="absolute inset-0 animate-spin">
+            <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-gold/20 blur-3xl" />
+          </div>
+          <div aria-hidden className="absolute inset-0 animate-[spin_30s_linear_infinite]">
+            <div className="absolute -bottom-32 -left-20 h-96 w-96 rounded-full bg-gold/10 blur-3xl" />
+          </div>
           <div className="relative grid gap-12 lg:grid-cols-12">
             <div className="lg:col-span-7">
               <p className="text-[11px] uppercase tracking-[0.25em] text-gold">— Próximo paso</p>
               <h2 className="mt-5 font-display text-5xl leading-[1.0] tracking-tight md:text-7xl">
-                Reserva un <span className="italic text-foreground/80">diagnóstico</span>
+                Reserva un <span className="font-display text-foreground/80">diagnóstico</span>
                 <br />
                 comercial gratuito.
               </h2>
