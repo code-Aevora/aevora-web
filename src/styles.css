@@ -23,18 +23,12 @@
  * Editorial black + warm gold. Instrument Serif for display, Inter for UI.
  */
 
-@theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
-  --radius-4xl: calc(var(--radius) + 16px);
+:root {
+  --radius: 0.5rem;
 
   --font-sans: "Formation Sans", "Inter", ui-sans-serif, sans-serif;
   --font-display: "Astonpoliz", "Instrument Serif", serif;
-  --font-brand: "Astera", sans-serif; /* nueva, para el logo */
+  --font-brand: "Astera", sans-serif;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -61,10 +55,6 @@
   --color-gold-deep: var(--gold-deep);
   --color-ink: var(--ink);
   --color-ink-2: var(--ink-2);
-}
-
-:root {
-  --radius: 0.5rem;
 
   /* Editorial near-black with warm undertone */
   --background: oklch(0.14 0.012 60);
@@ -155,24 +145,24 @@
   }
 }
 
-@utility font-display {
+.font-display {
   font-family: var(--font-display);
   font-weight: 400;
   letter-spacing: -0.02em;
 }
 
-@utility text-balance {
+.text-balance {
   text-wrap: balance;
 }
 
-@utility gold-text {
+.gold-text {
   background: var(--gradient-gold);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-@utility hairline {
+.hairline {
   background: linear-gradient(
     90deg,
     transparent,
@@ -203,6 +193,6 @@
   }
 }
 
-@utility animate-fade-up {
+.animate-fade-up {
   animation: fade-up 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }

@@ -17,23 +17,30 @@ export function Hero({ openModal }: HeroProps) {
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-background" />
       </div>
 
-      <div className="mx-auto grid min-h-[100svh] max-w-6xl grid-cols-1 items-center gap-12 px-6 pt-40 pb-24 lg:grid-cols-12">
-        <div className="lg:col-span-7 lg:col-start-6">
-          <h1 className="font-display mt-7 text-balance text-6xl leading-[0.95] tracking-tight md:text-7xl lg:text-8xl">
-            <span className="font-display text-foreground/90">Crecimiento</span>{" "}
-            <span className="font-display text-foreground">predecible</span>
+      <div className="mx-auto grid min-h-[100svh] max-w-6xl grid-cols-1 items-center gap-12 px-6 pt-28 sm:pt-32 lg:pt-40 pb-24 lg:grid-cols-12">
+        <div className="lg:col-span-7 lg:col-start-6 text-center sm:text-left">
+          <div className="inline-flex items-center gap-2 rounded-full border border-gold/20 bg-gold/5 px-4 py-1.5 mb-6">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-gold"></span>
+            </span>
+            <span className="text-[11px] uppercase tracking-[0.2em] text-gold/80">Aceptando 4 clientes · Q2 2026</span>
+          </div>
+          <h1 className="font-display mt-7 text-balance text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] tracking-tight">
+            <span className="text-foreground/90">Crecimiento</span>{" "}
+            <span className="text-foreground">predecible</span>
             <br />
-            <span className="font-display">para empresas que ya</span>{" "}
-            <span className="gold-text font-display">facturan</span>.
+            <span>para empresas que ya</span>{" "}
+            <span className="gold-text">facturan</span>.
           </h1>
 
-          <p className="mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground md:text-xl">
+          <p className="mt-7 max-w-full sm:max-w-xl text-lg leading-relaxed text-muted-foreground md:text-xl">
             Aevora diseña y opera el sistema completo de captación de clientes — prospección,
             contacto y cierre — para que tu equipo deje de perseguir leads y empieces a elegir con
             quién trabajar.
           </p>
 
-          <div className="mt-10 flex flex-wrap items-center gap-4">
+          <div className="mt-10 flex flex-wrap justify-center sm:justify-start items-center gap-4">
             <GlassButton type="button" onClick={openModal} size="lg">
               Reservar diagnóstico gratuito
             </GlassButton>

@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 @font-face {
   font-family: "Astera";
   src: url("/fonts/Astera-v2.ttf") format("truetype");
@@ -16,13 +18,8 @@
   font-display: swap;
 }
 
-@import "tailwindcss";
-
-@theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+:root {
+  --radius: 0.5rem;
 
   --font-sans: "Formation Sans", ui-sans-serif, sans-serif;
   --font-display: "Astonpoliz", serif;
@@ -46,28 +43,25 @@
   --color-gold: var(--gold);
   --color-gold-soft: var(--gold-soft);
   --color-gold-deep: var(--gold-deep);
-}
 
-:root {
-  --radius: 0.5rem;
-  --background: oklch(0.14 0.012 60);
-  --foreground: oklch(0.96 0.012 80);
-  --card: oklch(0.17 0.013 65);
-  --card-foreground: oklch(0.96 0.012 80);
-  --gold: oklch(0.78 0.13 78);
-  --gold-soft: oklch(0.86 0.09 85);
-  --gold-deep: oklch(0.58 0.12 65);
-  --primary: oklch(0.78 0.13 78);
-  --primary-foreground: oklch(0.14 0.012 60);
-  --secondary: oklch(0.22 0.014 65);
-  --secondary-foreground: oklch(0.96 0.012 80);
-  --muted: oklch(0.2 0.012 65);
-  --muted-foreground: oklch(0.68 0.02 75);
-  --accent: oklch(0.78 0.13 78);
-  --accent-foreground: oklch(0.14 0.012 60);
-  --border: oklch(0.96 0.012 80 / 0.1);
-  --input: oklch(0.96 0.012 80 / 0.14);
-  --ring: oklch(0.78 0.13 78);
+  --background: #1a1612; --background: oklch(0.14 0.012 60);
+  --foreground: #f5f3f0; --foreground: oklch(0.96 0.012 80);
+  --card: #1e1a15; --card: oklch(0.17 0.013 65);
+  --card-foreground: #f5f3f0; --card-foreground: oklch(0.96 0.012 80);
+  --gold: #c9a84c; --gold: oklch(0.78 0.13 78);
+  --gold-soft: #dfc97a; --gold-soft: oklch(0.86 0.09 85);
+  --gold-deep: #8a6e2a; --gold-deep: oklch(0.58 0.12 65);
+  --primary: #c9a84c; --primary: oklch(0.78 0.13 78);
+  --primary-foreground: #1a1612; --primary-foreground: oklch(0.14 0.012 60);
+  --secondary: #2a2419; --secondary: oklch(0.22 0.014 65);
+  --secondary-foreground: #f5f3f0; --secondary-foreground: oklch(0.96 0.012 80);
+  --muted: #242018; --muted: oklch(0.2 0.012 65);
+  --muted-foreground: #9e9688; --muted-foreground: oklch(0.68 0.02 75);
+  --accent: #c9a84c; --accent: oklch(0.78 0.13 78);
+  --accent-foreground: #1a1612; --accent-foreground: oklch(0.14 0.012 60);
+  --border: rgba(245,243,240,0.10); --border: oklch(0.96 0.012 80 / 0.1);
+  --input: rgba(245,243,240,0.14); --input: oklch(0.96 0.012 80 / 0.14);
+  --ring: #c9a84c; --ring: oklch(0.78 0.13 78);
   --gradient-gold: linear-gradient(135deg, oklch(0.86 0.09 85), oklch(0.72 0.14 70));
   --shadow-gold: 0 20px 60px -20px oklch(0.78 0.13 78 / 0.45);
 }
@@ -85,40 +79,20 @@
   }
 
   body {
+    font-family: var(--font-sans);
     background-color: var(--color-background);
     color: var(--color-foreground);
     -webkit-font-smoothing: antialiased;
   }
 
   h1, h2, h3, h4 {
-    font-family: "Astonpoliz", serif;
+    font-family: var(--font-display);
   }
-
-  body, p, span, a, button, input, select, textarea, label, li {
-    font-family: "Formation Sans", sans-serif;
-  }
-}
-
-@utility gold-text {
-  background: var(--gradient-gold);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-@utility font-display {
-  font-family: var(--font-display);
-  font-weight: 400;
-  letter-spacing: -0.02em;
 }
 
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
-}
-
-@utility animate-fade-up {
-  animation: fade-up 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 
 @keyframes hero-rotate {
@@ -170,6 +144,23 @@
 
   .gradient-border-stop-hover:hover {
     animation: gradient-rotate var(--animation-duration) linear infinite;
+  }
+
+  .gold-text {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
   }
 
   @keyframes gradient-rotate {
