@@ -7,18 +7,10 @@ export function CTA({ openModal }: { openModal: () => void }) {
     <section id="contacto" className="relative py-32">
       <div className="mx-auto max-w-6xl px-6">
         <div className="relative overflow-hidden rounded-[2rem] border border-gold/30 bg-gradient-to-br from-ink-2 via-ink to-background p-12 md:p-20">
-          <div
-            aria-hidden
-            className="absolute inset-0"
-            style={{ animation: "spin 30s linear infinite" }}
-          >
+          <div aria-hidden className="absolute inset-0 rotate-slow">
             <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-gold/20 blur-3xl" />
           </div>
-          <div
-            aria-hidden
-            className="absolute inset-0"
-            style={{ animation: "spin 30s linear infinite reverse" }}
-          >
+          <div aria-hidden className="absolute inset-0 rotate-slow-reverse">
             <div className="absolute -bottom-32 -left-20 h-96 w-96 rounded-full bg-gold/10 blur-3xl" />
           </div>
           <div className="relative grid gap-12 lg:grid-cols-12">

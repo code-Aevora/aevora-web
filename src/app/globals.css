@@ -121,6 +121,34 @@
   animation: fade-up 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 
+@keyframes hero-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes hero-rotate-reverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@layer utilities {
+  .rotate-slow {
+    animation: hero-rotate 30s linear infinite;
+  }
+
+  .rotate-slow-reverse {
+    animation: hero-rotate-reverse 30s linear infinite;
+  }
+}
+
 /* ---------- GlassButton ---------- */
 .glass-button-wrap {
   position: relative;
